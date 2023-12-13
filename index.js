@@ -24,7 +24,7 @@ render();
  */
 async function getParties() {
     // TODO
-    try { // i actually deleted all of the listings, so the array will remain empty until the user can post a new event. but the post method isn't working
+    try { // i actually deleted all of the listings, so the array will remain empty until the user can post a new event. but the post method keeps returning a 500 error
         const response = await fetch(API_URL)
         const json = await response.json()
         console.log(json)
