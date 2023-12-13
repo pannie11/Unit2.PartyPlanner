@@ -80,7 +80,6 @@ async function addParty(event) {
             body: JSON.stringify({
                 name: addPartyForm.name.value,
                 date: addPartyForm.date.value,
-                // time: addPartyForm.time.value,
                 location: addPartyForm.location.value,
                 description: addPartyForm.description.value
             }),
