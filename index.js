@@ -24,13 +24,13 @@ render();
  */
 async function getParties() {
     // TODO
-    try {
+    try { // i actually deleted all of the listings, so the array will remain empty until the user can post a new event. but the post method isn't working
         const response = await fetch(API_URL)
         const json = await response.json()
-        
         console.log(json)
         
         state.parties = json.data
+        console.log(state.parties)
     } catch (error) {
         console.error(error)
     }
@@ -49,11 +49,11 @@ function renderParties() {
     const parties = state.parties.map((party) => {
         const partyListed = document.createElement('li')
         partyListed.innerHTML = `
-    <p>${party.name}</p>
-    <p>${party.date}</p>
-    <p>${party.location}</p>
-    <p>${party.description}</p>
-    `;
+            <p>${party.name}</p>
+            <p>${party.date}</p>
+            <p>${party.location}</p>
+            <p>${party.description}</p>
+        `;
 
         const deleteButton = document.createElement('button')
         deleteButton.textContent = 'Delete'
